@@ -9,6 +9,8 @@ function CookieStand(storeLocation, domID, minCustomer, maxCustomer, avgCookiesP
   this.totalCookies = [];
   this.total = 0;
 
+
+
   this.customersPerHour = function() {
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
   };
