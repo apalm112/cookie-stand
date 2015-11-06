@@ -1,5 +1,7 @@
 var time = ["10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 
+var allShops = [];
+
 function CookieStand(storeLocation, domID, minCustomer, maxCustomer, avgCookiesPer) {
   this.storeLocation = storeLocation;
   this.domID = domID;
@@ -8,8 +10,7 @@ function CookieStand(storeLocation, domID, minCustomer, maxCustomer, avgCookiesP
   this.avgCookiesPer = avgCookiesPer;
   this.totalCookies = [];
   this.total = 0;
-
-
+  allShops.push(this);
 
   this.customersPerHour = function() {
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
@@ -19,7 +20,6 @@ function CookieStand(storeLocation, domID, minCustomer, maxCustomer, avgCookiesP
     for (var i = 0; i < time.length; i++){
       this.totalCookies.push(Math.floor(this.customersPerHour() * this.avgCookiesPer));
       this.total += this.totalCookies[i];
-      console.log("@hour " + (10 + i) + " hourly amount is " + this.totalCookies[i] + " and the daily total is " + this.total);
     };
   };
 }
@@ -74,7 +74,44 @@ function makeTable () {
   }
 
   document.getElementById('table').appendChild(tbl);
+
 }
 
 cookieCalculation();
 makeTable();
+
+var shopForm = document.getElementById('standName');
+
+var renderNew = function() {
+  var table = document.getElementById('table');
+  table.innerHTML = null;
+  reportAllShops();
+  makeTable();
+}
+
+var handleFormSubmit = function(event) {
+  event.preventDefault();
+
+  var store = event.target.store.value;
+  var minCust = event.target.minCust.value;
+  var maxCust = event.target.maxCust.value;
+  var avgCookies = event.target.avgCookies.value;
+
+ // console.log('shop:' + store);
+ // console.log('min:' + minCust);
+ // console.log('max:' + maxCust);
+ // console.log('avg:' + avgCookies);
+
+  var newShop = new CookieStand(store, minCust, maxCust, avgCookies);
+
+  event.target.store.value = null;
+  event.target.minCust.value = null;
+  event.target.maxCust.value = null;
+  event.target.avgCookies.value = null;
+
+  renderNew();
+};
+
+shopForm.addEventListener('submit', handleFormSubmit);
+
+//renderNew();

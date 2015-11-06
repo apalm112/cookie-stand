@@ -1,0 +1,25 @@
+header {
+  background-color: #F98975;
+  height: 170px;
+  width: 1000px;
+}
+body  {
+  background-color: #E12E0E
+}
+body p {
+  border: 5px solid black;
+  padding: 5px;
+  background-color: #F86348;
+  margin-left: 24px;
+}
+#shirt {
+  width: 30%;
+}
+#patSalmon {
+  width: 30%;
+}
+#family {
+  width: 30%;
+
+}
+
