@@ -2,6 +2,11 @@ var time = ["10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 
 var allShops = [];
 
+var shopForm = document.getElementById('standName');
+
+var handleFormSubmit = function(event) {
+  event.preventDefault();
+
 function CookieStand(storeLocation, domID, minCustomer, maxCustomer, avgCookiesPer) {
   this.storeLocation = storeLocation;
   this.domID = domID;
@@ -37,6 +42,18 @@ function cookieCalculation () {
     shopNames[l].cookiesPerHour();
   }
 }
+
+
+
+function reportAllShops () {
+ for (var k = 0; k < allShops.length; k++) {
+    allShops[k].hourlyModel();
+  }
+
+
+
+
+
 
 function makeTable () {
   var tbl = document.createElement('table');
@@ -80,7 +97,7 @@ function makeTable () {
 cookieCalculation();
 makeTable();
 
-var shopForm = document.getElementById('standName');
+
 
 var renderNew = function() {
   var table = document.getElementById('table');
@@ -89,18 +106,12 @@ var renderNew = function() {
   makeTable();
 }
 
-var handleFormSubmit = function(event) {
-  event.preventDefault();
+
 
   var store = event.target.store.value;
   var minCust = event.target.minCust.value;
   var maxCust = event.target.maxCust.value;
   var avgCookies = event.target.avgCookies.value;
-
- // console.log('shop:' + store);
- // console.log('min:' + minCust);
- // console.log('max:' + maxCust);
- // console.log('avg:' + avgCookies);
 
   var newShop = new CookieStand(store, minCust, maxCust, avgCookies);
 
@@ -110,8 +121,8 @@ var handleFormSubmit = function(event) {
   event.target.avgCookies.value = null;
 
   renderNew();
+  }
 };
 
 shopForm.addEventListener('submit', handleFormSubmit);
 
-//renderNew();
