@@ -1,0 +1,93 @@
+body {
+  background-color: #A9BF86;
+}
+
+/*  Source For The Fancy Button:  http://learn.shayhowe.com/advanced-html-css/transitions-animations/   */
+body {
+  font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+}
+button {
+  border: 0;
+  background: #0087cc;
+  border-radius: 4px;
+  box-shadow: 0 5px 0 #006599;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 12px 20px;
+  transition: all .1s linear;
+}
+button:active {
+  box-shadow: 0 2px 0 #006599;
+  transform: translateY(3px);
+}
+/*--------------------------*/
+
+/* Ned Flanders Yo! */
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+.background {
+  background-color: #A9BF86;
+  width: 100%;
+  height: 100%;
+}
+.cards {
+  position: relative;
+  width: 150px;
+  height: 400px;
+  margin: 0 auto;
+  perspective: 800px;
+}
+.card {
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(http://s3-ec.buzzfed.com/static/enhanced/web04/2012/6/28/11/anigif_enhanced-buzz-9073-1340896612-1.gif) center center no-repeat;
+  background-size: cover;
+  transform-style: preserve-3d;
+  transform-origin: 50% 100%;
+}
+.flip {
+  animation: flip 2s ease infinite;
+  z-index: 0;
+}
+.flip:nth-child(1) {
+  animation-delay: 0s;
+}
+.flip:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.flip:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.flip:nth-child(4) {
+  animation-delay: 1.2s;
+}
+.flip:nth-child(5) {
+  animation-delay: 1.6s;
+}
+.flip:nth-child(6) {
+  animation-delay: 2s;
+}
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 1;
+  }
+  40% {
+    z-index:2
+  }
+  100% {
+    z-index: 0;
+    transform: rotateX(-180deg);
+  }
+}
+
