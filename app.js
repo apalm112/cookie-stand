@@ -126,3 +126,5 @@ var renderNew = function() {
 
 shopForm.addEventListener('submit', handleFormSubmit);
 
+
+

@@ -1,18 +1,83 @@
 header {
+  text-align: center;
+  font-size: 30px;
   background-color: #F98975;
   height: 170px;
-  width: 1000px;
+  width: 1255px;
+  border-radius: 30px;
 }
-body  {
 
-  background-color: #F7924E;
+/* Transition Thingy on Header Box Attempt */
+
+body {
+  color: #fff;
+  font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
 }
-body p {
-  border: 5px solid black;
-  padding: 5px;
-  background-color: #F86348;
-  margin-left: 24px;
+
+.border {
+  background: #2db34a;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 95px;
+  line-height: 95px;
+  text-align: center;
+  transition-property: background, border-radius;
+  transition-duration: .2s, 1s;
+  transition-timing-function: linear;
+  width: 1259px;
 }
+.border:hover {
+  background-color: #A9BF86;
+  /* background: #ff7b29; */
+  border-radius: 50%;
+}
+/* End Attempt Transition thingy here */
+
+
+/* Main Page Background Color */
+body  {
+  /*background-color: #F7924E; */
+  background-color: #A9BF86;
+}
+
+/* Header Arrangement of jpg's & text */
+.first-salmon {
+    padding-right: 780px;
+}
+
+.second-salmon {
+  padding-left: 780px;
+  postion: relative:
+
+}
+
+a:link {
+  color: black;
+}
+a:active {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: black;
+}
+
+
+body section li {
+  color: black;
+}
+
+li {
+  color: black;
+}
+
+/* Black Borders Around <p> Tags */ body article p {   border: 5px solid black;
+border-radius: 0px;   padding: 5px;   background-color: #F86348;   margin-left:
+24px; }
+
+/* JPEG Sizing */
 #shirt {
   width: 30%;
 }
@@ -21,13 +86,43 @@ body p {
 }
 #family {
   width: 30%;
+}
 
+/* Fade In On Hover */
+
+.fade
+{
+        opacity:0.5;
+}
+.fade:hover
+{
+        opacity:1;
+}
+
+/* Inset Border */
+.border:hover
+{
+        box-shadow: inset 0 0 0 25px #53a7ea;
+}
+
+#hours {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+
+#id {
+  display: inline-block;
+  width: 15px;
+  height: 100px;
+  margin: 1em;
 }
 
 
-
-body {
-  color: #fff;
+/*Two Salmon.jpg boxes that spin */
+.spin {
+  color: #5FF6F4;
   font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
   margin: 12px 15px;
 }
@@ -36,13 +131,13 @@ body {
   border-radius: 6px;
 }
 .original {
-  background: #F3D020;
+  background: #5FF6F4;
   border: 1px dashed #cecfd5;
   float: left;
   margin: 12px 15px;
 }
 .box {
-  background: #F98975;
+  background: #5FF6F4;
   height: 95px;
   line-height: 95px;
   text-align: center;
@@ -71,3 +166,61 @@ body {
 }
 
 
+/*  pat-salmon.jpg spin */
+body {
+  color: #fff;
+  font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+  margin: 12px 15px;
+}
+.original,
+.box {
+  border-radius: 6px;
+}
+.original {
+  background: #eaeaed;
+  border: 1px dashed #cecfd5;
+  float: left;
+  margin: 12px 15px;
+}
+.box {
+  background: #2db34a;
+  height: 95px;
+  line-height: 95px;
+  text-align: center;
+  width: 95px;
+}
+.salmon-spin {
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+.salmon-spin:hover {
+    animation: spin 5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.box-1 {
+  transform: perspective(200px) translateZ(-50px);
+}
+.box-2 {
+  transform: perspective(200px) translateZ(50px);
+}
+
+/* Attempt at a Caesar Type Animation on Cookie.jpg */
+.salmon-cookie:hover{
+  margin-left: 600px;
+}
+.salmon-cookie.opacity {
+    opacity: 0;
+}
+
+.salmon-cookie.style {
+  margin-left: 620px;
+  transition: all 800ms cubic-bezier(0.500, 0.250, 0.500, 0.750);
+
+}
