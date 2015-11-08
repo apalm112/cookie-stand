@@ -2,39 +2,50 @@
   <html>
     <head>
       <title>Salmon Cookie Stand</title>
-      <link rel="stylesheet" type="text/css" href="sales.css">
+     <link rel="stylesheet" type="text/css" href="sales.css">
     </head>
     <body>
-      <h1 title="Pat's Salmon Cookies .">
-        Pat's Salmon Cookie Stand
-      </h1>
-        <form id="standName">
+      <header>
+        <img src="images/salmon.png" width="450" height="125"
+        title="The contents of any one data cell are dependent on the contents of every data cell including itself. The table of salmon cookie sales is complete and bidirectional, and each node has a loop. The mouseover text has two hundred and forty-two characters or not." alt="Self-Description">
+
+        <h1 title="Pat's Salmon Cookies .">
+          Pat's Salmon Cookie Stand Sales Info
+        </h1>
+      </header>
+
+      <main>
+
+        <div id='table'></div>
+
+        <form id='shopForm'>
           <fieldset>
             <legend>Cookie Stand Info</legend>
-              <p>Store Location
-              <input type="text" name="store" size="30" maxlength="50"></p>
-              <p>Min Customers
-              <input type="text" name="minCust" size="30" maxlength="50"></p>
-              <p>Max Customer
-              <input type="text" name="maxCust" size="30" maxlength="50"></p>
-              <p>Average Cookies
-              <input type="text" name="avgCookies" size="30" maxlength="50"></p>
-              <!--<input type ="submit" value="Submit"/> -->
 
-              <button id='submit' type='submit'>Submit</button>
+
+            <label for='shop'>Stand Location</label>
+            <input name='shop' type="text">
+            <br />
+            <label for='min'>Minimum Custmers</label>
+            <input name='min' type='text'>
+            <br />
+            <label for='max'>Maximum Customers</label>
+            <input name='max' type='text'>
+            <br />
+            <label for='avg'>Average Cookies Per Customer</label>
+            <input name='avg' type='text'>
+            <br />
+
+            <button id='submit' type='submit'>Submit!</button>
 
           </fieldset>
         </form>
-      <p></p>
-      <img src="images/salmon.png" width="450" height="125"
-        title="The contents of any one panel are dependent on the contents of every panel including itself. The table of salmon cookie sales is complete and bidirectional, and each node has a loop. The mouseover text has two hundred and forty-two characters." alt="Self-Description">
-      <div id='table'></div>
 
-
+    </main>
 
 
       <div class="background">
-      <div class="cards">
+      <div class="cards" title="Y Table NO Compute??!">
       <div class="card flip"></div>
       <div class="card flip"></div>
       <div class="card flip"></div>
@@ -47,6 +58,6 @@
       <script src='app.js' type="text/javascript">
       </script>
     </body>
-    <footer>
-    </footer>
   </html>
+
+
